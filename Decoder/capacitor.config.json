@@ -1,0 +1,6 @@
+{
+  "appId": "com.example.caesarcipher",
+  "appName": "Caesar Cipher",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

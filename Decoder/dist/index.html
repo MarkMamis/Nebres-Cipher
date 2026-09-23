@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a43">
+  <title>Caesar | Text Cipher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-CZ-78BeL.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DHYu_2eF.css">
+</head>
+<body>
+  <ion-app>
+  <ion-content>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Caesar cipher home">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span>CAESAR</span>
+      </a>
+      <span class="security-note"><span class="pulse"></span> Runs in your browser</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">CLASSICAL CIPHER / SHIFT YOUR MESSAGE</p>
+      <h1>Move every letter.<br><em>Reveal the message.</em></h1>
+      <p class="hero-copy">A simple Caesar cipher for encoding and decoding text with a shift of your choice. Nothing leaves your browser.</p>
+    </section>
+
+    <section class="workspace" aria-label="Cipher workspace">
+      <div class="mode-switch" role="tablist" aria-label="Choose operation">
+        <button class="mode-button active" id="encryptTab" role="tab" aria-selected="true" aria-controls="cipherPanel">Encode <span>01</span></button>
+        <button class="mode-button" id="decryptTab" role="tab" aria-selected="false" aria-controls="cipherPanel">Decode <span>02</span></button>
+      </div>
+
+      <div class="panel" id="cipherPanel" role="tabpanel">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker" id="operationKicker">ENCODE MODE</p>
+            <h2 id="operationTitle">Shift your message into cipher text</h2>
+          </div>
+          <div class="algorithm-badge">A-Z <span aria-hidden="true">·</span> 26 LETTERS</div>
+        </div>
+
+        <div class="field-grid">
+          <label class="field full-width">
+            <span class="field-label" id="inputLabel">Message</span>
+            <span class="field-hint" id="inputHint">Letters shift; spaces and punctuation stay unchanged</span>
+            <textarea id="inputText" rows="8" placeholder="Type or paste your message here..." spellcheck="false"></textarea>
+            <span class="char-count"><strong id="charCount">0</strong> characters</span>
+          </label>
+
+          <label class="field">
+            <span class="field-label">Shift value</span>
+            <span class="field-hint">Use any whole number from -25 to 25</span>
+            <input id="shiftInput" class="shift-input" type="number" value="3" min="-25" max="25" step="1" inputmode="numeric" aria-label="Letter shift value">
+          </label>
+
+          <div class="field action-field">
+            <span class="field-label">Action</span>
+            <span class="field-hint">Ready when you are</span>
+            <button class="primary-button" id="runButton" type="button"><span id="runLabel">Encode message</span><span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+
+        <div class="result-section" id="resultSection" hidden>
+          <div class="result-heading">
+            <div>
+              <p class="panel-kicker" id="resultKicker">OUTPUT</p>
+              <h3 id="resultTitle">Your encoded message</h3>
+            </div>
+            <div class="result-actions">
+              <button class="secondary-button" id="copyButton" type="button">Copy</button>
+              <button class="secondary-button" id="downloadButton" type="button">Download</button>
+            </div>
+          </div>
+          <textarea id="resultText" class="result-text" rows="7" readonly aria-label="Generated result"></textarea>
+          <p class="result-meta" id="resultMeta"></p>
+        </div>
+
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>YOUR BROWSER. YOUR DATA.</span>
+      <span>CLASSIC CRYPTOGRAPHY, SIMPLIFIED</span>
+    </footer>
+  </main>
+  </ion-content>
+  </ion-app>
+</body>
+</html>
